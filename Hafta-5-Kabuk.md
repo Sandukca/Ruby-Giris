@@ -1,6 +1,6 @@
-# Kabuk Betiği Pratikleri: Hafta 5
+# Temel Seviye Dosya ve Dizin Kabuk Komutları: Hafta 5
 
-Bu pratiklerde masaüstünüzde terminalden klasör ve dosya oluşturacak, klasörler arasında gezinecek ve WSL'de Windows sürücülerinin nerede durduğunu göreceksiniz.
+Bu çalışmada masaüstünüzde terminalden klasör ve dosya oluşturacak, klasörler arasında gezinecek ve WSL'de Windows sürücülerinin nerede durduğunu göreceksiniz.
 
 Komutların yanındaki `#` işaretinden sonraki kısım açıklamadır, terminal onu çalıştırmaz. Komutları yazarken açıklamayı yazmanıza gerek yoktur.
 
@@ -197,7 +197,7 @@ Bu klasör Windows masaüstünde ya da `C:` sürücüsünde görünmez. Windows 
 
 ## Temizlik
 
-Pratikte oluşturduklarınızı silmek isterseniz masaüstündeyken şu komutları çalıştırınız:
+Bu çalışmada oluşturduklarınızı silmek isterseniz masaüstündeyken şu komutları çalıştırınız:
 
 ```bash
 rm dosya1.txt dosya2.txt dosya3.txt   # üç dosyayı siler
