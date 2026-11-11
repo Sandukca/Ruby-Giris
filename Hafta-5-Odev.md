@@ -132,3 +132,9 @@ true
 Adım Deniz, 19 yaşındayım.
 Gelecek yıl 20 yaşında olacağım.
 ```
+
+---
+
+## Ek çalışma
+
+Terminalde klasör ve dosya oluşturma, klasörler arasında gezinme ve WSL'de Windows sürücülerinin nerede durduğu hakkında daha fazla pratik için [Temel Seviye Dosya ve Dizin Kabuk Komutları](Hafta-5-Kabuk.md) sayfasına bakınız.
