@@ -18,3 +18,9 @@ Vize sınavları yapıldı.
 ### Hafta 7: Uygulama yok
 
 Vize sonrası hafta olduğu için laboratuvar uygulaması iptal edildi.
+
+### Hafta 8: Ödev
+
+| Dosya | Konu | Açıklama |
+| --- | --- | --- |
+| [Hafta-8-Odev.md](Hafta-8-Odev.md) | Sağa yaslı dik üçgen | Tek `while` döngüsü ve yazıyı sayıyla çarpma (`" " * n`) ile yıldızlardan dik üçgen çizme. Çözüm ve 5 "Kendiniz deneyiniz" şekli. |
