@@ -140,10 +140,10 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
    ****
    ```
 
-2. **Ters dik üçgen:** Sağa yaslı üçgenin baş aşağı hâli. En uzun satır en üsttedir. (İpucu: sayacı `n`'den başlatıp azaltınız.)
+2. **Sağa yaslı ters dik üçgen:** Sağa yaslı üçgenin baş aşağı hâli. En uzun satır en üsttedir. (İpucu: sayacı `n`'den başlatıp azaltınız.)
 
    ```bash
-   echo "4" | ruby ters.rb
+   echo "4" | ruby saga_ters.rb
    ```
 
    Çıktı:
@@ -155,7 +155,22 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
       *
    ```
 
-3. **Piramit:** Yıldızlar ortalanmıştır. `i`. satırda kaç yıldız olduğunu tabloyla bulunuz. (İpucu: 1, 3, 5, 7 …)
+3. **Sola yaslı ters dik üçgen:** Sola yaslı üçgenin baş aşağı hâli. Satır başında boşluk yoktur, en uzun satır en üsttedir.
+
+   ```bash
+   echo "4" | ruby sola_ters.rb
+   ```
+
+   Çıktı:
+
+   ```
+   ****
+   ***
+   **
+   *
+   ```
+
+4. **Piramit:** Yıldızlar ortalanmıştır. `i`. satırda kaç yıldız olduğunu tabloyla bulunuz. (İpucu: 1, 3, 5, 7 …)
 
    ```bash
    echo "4" | ruby piramit.rb
@@ -170,7 +185,7 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
    *******
    ```
 
-4. **Sayı üçgeni:** Yıldız yerine sayılar yazılır. Her satır bir öncekinin sonuna yeni bir sayı eklenerek oluşur. (İpucu: döngüden önce boş bir yazı (`''`) tanımlayıp her adımda `i.to_s` ekleyiniz.)
+5. **Sayı üçgeni:** Yıldız yerine sayılar yazılır. Her satır bir öncekinin sonuna yeni bir sayı eklenerek oluşur. (İpucu: döngüden önce boş bir yazı (`''`) tanımlayıp her adımda `i.to_s` ekleyiniz.)
 
    ```bash
    echo "4" | ruby sayi.rb
@@ -185,7 +200,7 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
    1234
    ```
 
-5. **İçi boş kare:** `n × n` boyutunda bir kare. İlk ve son satır dolu, aradaki satırlarda yalnızca kenarlarda yıldız vardır. (İpucu: döngünün içinde `if` ile ilk ve son satırı ayırınız.)
+6. **İçi boş kare:** `n × n` boyutunda bir kare. İlk ve son satır dolu, aradaki satırlarda yalnızca kenarlarda yıldız vardır. (İpucu: döngünün içinde `if` ile ilk ve son satırı ayırınız.)
 
    ```bash
    echo "4" | ruby kare.rb
