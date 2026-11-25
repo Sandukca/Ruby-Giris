@@ -8,12 +8,33 @@ Bu bir **çalışma ödevidir**, teslim edilmeyecektir. Konuyu pekiştirmek içi
 
 Negatif değer girilme ihtimalini düşünmeyiniz. Programınızı 1 ile 50 arasındaki değerlerle deneyiniz.
 
-**İpucu:** Ruby'de bir yazıyı bir sayıyla çarparsanız yazı o kadar kez yan yana yazılmaktadır. Terminalde aşağıdaki kodu çalıştırıp deneyiniz:
+**İpucu:** Ruby'de bir yazıyı bir sayıyla çarparsanız yazı o kadar kez yan yana yazılmaktadır. Aşağıdaki kodu `deneme.rb` adlı bir dosyaya yazıp terminalde `ruby deneme.rb` komutuyla çalıştırınız:
 
-```ruby
-puts "q" * 4      # qqqq
-puts " " * 3 + "*" # üç boşluk, sonra bir yıldız
-```
+> **📄 deneme.rb**
+>
+> ```ruby
+> puts "q" * 4      # qqqq
+> puts " " * 3 + "*" # üç boşluk, sonra bir yıldız
+> ```
+
+
+**Bu sayfadaki kutular**
+
+Sayfadaki her kutunun üstünde, o kutunun nereye yazılacağını gösteren bir başlık bulunmaktadır:
+
+| Kutu başlığı | Ne yapılmalı |
+| --- | --- |
+| ⌨️ **Terminal** | Komutu terminale yazınız ve Enter'a basınız. |
+| 📄 **main.rb** (veya başka bir dosya adı) | Kodu VS Code'da başlıkta yazan dosyaya yazınız ve **Ctrl + S** ile kaydediniz. Bu kod terminale yazılmaz. |
+| 🖥️ **Çıktı** | Programın ekrana yazdığı sonuçtur. Bunu bir yere yazmayınız, kendi programınızın çıktısıyla karşılaştırınız. |
+
+**Ruby kodunu yanlışlıkla terminale yapıştırırsanız** terminal Ruby'yi tanımadığı için aşağıdaki gibi mesajlar vermektedir:
+
+- `n = gets.to_i` → `n: command not found`
+- `puts "q" * 4` → `Command 'puts' not found` (altında `sudo apt install` önerileri de çıkabilir, bunları çalıştırmayınız)
+- `while i <= n` → satır başında `>` işareti çıkmakta ve terminal beklemektedir. Bu durumdan **Ctrl + C** ile çıkınız.
+
+Bu mesajları görürseniz kodu dosyaya yazıp kaydediniz, sonra terminalde `ruby main.rb` komutunu çalıştırınız.
 
 ---
 
@@ -21,20 +42,24 @@ puts " " * 3 + "*" # üç boşluk, sonra bir yıldız
 
 Hafta 5'teki gibi masaüstünde bir klasör açıp içinde `main.rb` dosyasını oluşturunuz:
 
-```bash
-cd /mnt/c/Users/vagrant/Desktop   # okul bilgisayarında masaüstüne gitmektedir
-mkdir Hafta8                      # Hafta8 adında bir klasör oluşturmaktadır
-cd Hafta8                         # Hafta8 klasörüne girmektedir
-touch main.rb                     # boş bir main.rb dosyası oluşturmaktadır
-code main.rb                      # main.rb dosyasını VS Code editöründe açmaktadır
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> cd /mnt/c/Users/vagrant/Desktop   # okul bilgisayarında masaüstüne gitmektedir
+> mkdir Hafta8                      # Hafta8 adında bir klasör oluşturmaktadır
+> cd Hafta8                         # Hafta8 klasörüne girmektedir
+> touch main.rb                     # boş bir main.rb dosyası oluşturmaktadır
+> code main.rb                      # main.rb dosyasını VS Code editöründe açmaktadır
+> ```
 
 Programınızı iki şekilde çalıştırabilirsiniz:
 
-```bash
-ruby main.rb            # program, sayıyı yazıp Enter'a basmanızı beklemektedir
-echo "4" | ruby main.rb # 4 sayısı programa doğrudan verilmektedir
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> ruby main.rb            # program, sayıyı yazıp Enter'a basmanızı beklemektedir
+> echo "4" | ruby main.rb # 4 sayısı programa doğrudan verilmektedir
+> ```
 
 ---
 
@@ -51,36 +76,42 @@ Yani `echo "4" | ruby main.rb` komutunda `echo`'nun yazdığı `4` ve Enter, `ma
 
 **1. `echo` tek başına**
 
-```bash
-echo "Merhaba"
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> echo "Merhaba"
+> ```
 
-Çıktı:
-
-```
-Merhaba
-```
+> **🖥️ Çıktı**
+>
+> ```
+> Merhaba
+> ```
 
 **2. `gets` ile okuyan bir program**
 
 `selam.rb` dosyasına aşağıdaki kodu yazınız:
 
-```ruby
-ad = gets.chomp
-puts "Merhaba #{ad}"
-```
+> **📄 selam.rb**
+>
+> ```ruby
+> ad = gets.chomp
+> puts "Merhaba #{ad}"
+> ```
 
 Önce elle çalıştırınız: `ruby selam.rb` yazınız, program beklerken `Deniz` yazıp Enter'a basınız. Sonra aynı girdiyi `echo` ile veriniz:
 
-```bash
-echo "Deniz" | ruby selam.rb
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> echo "Deniz" | ruby selam.rb
+> ```
 
-Çıktı:
-
-```
-Merhaba Deniz
-```
+> **🖥️ Çıktı**
+>
+> ```
+> Merhaba Deniz
+> ```
 
 İki yolun sonucu aynıdır. Farkı şudur: `echo` ile verdiğinizde program sizi beklememekte ve girdi (`Deniz`) ekranda ayrıca görünmemektedir. Ekranda yalnızca programın çıktısı görünmektedir.
 
@@ -88,23 +119,27 @@ Merhaba Deniz
 
 Her `gets` bir satır okumaktadır. Program iki kez `gets` çağırıyorsa iki satır vermeniz gerekmektedir. `toplam.rb`:
 
-```ruby
-a = gets.to_i
-b = gets.to_i
-puts a + b
-```
+> **📄 toplam.rb**
+>
+> ```ruby
+> a = gets.to_i
+> b = gets.to_i
+> puts a + b
+> ```
 
 `printf` ile `\n` (satır sonu) koyarak iki satırı tek komutta verebilirsiniz:
 
-```bash
-printf "3\n5\n" | ruby toplam.rb
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> printf "3\n5\n" | ruby toplam.rb
+> ```
 
-Çıktı:
-
-```
-8
-```
+> **🖥️ Çıktı**
+>
+> ```
+> 8
+> ```
 
 **Dikkat:** `echo "3 5" | ruby toplam.rb` yazarsanız iki sayı tek satırda gitmektedir. İlk `gets` `3 5` satırının tamamını okumakta, `to_i` bundan `3` çıkarmaktadır. İkinci `gets` okuyacak satır bulamamakta, `b` de `0` olmaktadır. Bu durumda ekranda `8` yerine `3` yazılmaktadır.
 
@@ -116,64 +151,72 @@ Bu ödevde program tek bir sayı okuduğu için `echo "4" | ruby main.rb` yeterl
 
 **Örnek 1**
 
-```bash
-echo "1" | ruby main.rb
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> echo "1" | ruby main.rb
+> ```
 
-Çıktı:
-
-```
-*
-```
+> **🖥️ Çıktı**
+>
+> ```
+> *
+> ```
 
 **Örnek 2**
 
-```bash
-echo "2" | ruby main.rb
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> echo "2" | ruby main.rb
+> ```
 
-Çıktı:
-
-```
- *
-**
-```
+> **🖥️ Çıktı**
+>
+> ```
+>  *
+> **
+> ```
 
 **Örnek 3**
 
-```bash
-echo "4" | ruby main.rb
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> echo "4" | ruby main.rb
+> ```
 
-Çıktı:
-
-```
-   *
-  **
- ***
-****
-```
+> **🖥️ Çıktı**
+>
+> ```
+>    *
+>   **
+>  ***
+> ****
+> ```
 
 **Örnek 4**
 
-```bash
-echo "10" | ruby main.rb
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> echo "10" | ruby main.rb
+> ```
 
-Çıktı:
-
-```
-         *
-        **
-       ***
-      ****
-     *****
-    ******
-   *******
-  ********
- *********
-**********
-```
+> **🖥️ Çıktı**
+>
+> ```
+>          *
+>         **
+>        ***
+>       ****
+>      *****
+>     ******
+>    *******
+>   ********
+>  *********
+> **********
+> ```
 
 Her satırın son karakteri yıldızdır, yıldızdan sonra boşluk yoktur.
 
@@ -201,16 +244,18 @@ Tablodan şu kural çıkmaktadır: `i`. satırda **`n - i` boşluk** ve **`i` y�
 
 ## Çözüm
 
-```ruby
-# frozen_string_literal: true
-
-n = gets.to_i
-i = 1
-while i <= n
-  puts ' ' * (n - i) + '*' * i
-  i += 1
-end
-```
+> **📄 main.rb**
+>
+> ```ruby
+> # frozen_string_literal: true
+>
+> n = gets.to_i
+> i = 1
+> while i <= n
+>   puts ' ' * (n - i) + '*' * i
+>   i += 1
+> end
+> ```
 
 **Satır satır açıklama**
 
@@ -229,97 +274,121 @@ Aşağıdaki hatalı programlar `echo "3" | ruby main.rb` ile çalıştırılmı
 
 **1. `to_i` unutulursa**
 
-```ruby
-n = gets
-```
+> **📄 main.rb**
+>
+> ```ruby
+> n = gets
+> ```
 
 `gets` girilen değeri yazı (String) olarak okumaktadır. `i <= n` karşılaştırmasında sayı ile yazı karşılaştırılamadığı için program hata vermektedir:
 
-```
-comparison of Integer with String failed (ArgumentError)
-```
+> **🖥️ Çıktı**
+>
+> ```
+> comparison of Integer with String failed (ArgumentError)
+> ```
 
 Doğrusu `n = gets.to_i` şeklindedir.
 
 **2. Parantez unutulursa**
 
-```ruby
-puts ' ' * n - i + '*' * i
-```
+> **📄 main.rb**
+>
+> ```ruby
+> puts ' ' * n - i + '*' * i
+> ```
 
 Ruby önce `' ' * n` işlemini yapmakta ve bir yazı elde etmektedir. Ardından bu yazıdan `i` sayısını çıkarmaya çalışmaktadır. Yazıdan sayı çıkarılamadığı için program hata vermektedir:
 
-```
-undefined method `-' for "   ":String (NoMethodError)
-```
+> **🖥️ Çıktı**
+>
+> ```
+> undefined method `-' for "   ":String (NoMethodError)
+> ```
 
 Doğrusu `' ' * (n - i)` şeklindedir. Önce parantezin içi hesaplanmakta, sonra boşluk o kadar kez yazılmaktadır.
 
 **3. `+` yerine virgül kullanılırsa**
 
-```ruby
-puts ' ' * (n - i), '*' * i
-```
+> **📄 main.rb**
+>
+> ```ruby
+> puts ' ' * (n - i), '*' * i
+> ```
 
 `puts` virgülle ayrılmış her değeri ayrı bir satıra yazmaktadır. Bu yüzden boşluklar ve yıldızlar alt alta düşmektedir:
 
-```
-  
-*
- 
-**
-
-***
-```
+> **🖥️ Çıktı**
+>
+> ```
+>   
+> *
+>  
+> **
+>
+> ***
+> ```
 
 Doğrusu iki parçayı `+` ile birleştirmektir.
 
 **4. `i += 1` unutulursa**
 
-```ruby
-while i <= n
-  puts ' ' * (n - i) + '*' * i
-end
-```
+> **📄 main.rb**
+>
+> ```ruby
+> while i <= n
+>   puts ' ' * (n - i) + '*' * i
+> end
+> ```
 
 `i` hiç artmadığı için `i <= n` koşulu hep doğru kalmakta ve döngü sonsuza kadar çalışmaktadır. Ekran aynı satırla dolmaktadır:
 
-```
-  *
-  *
-  *
-...
-```
+> **🖥️ Çıktı**
+>
+> ```
+>   *
+>   *
+>   *
+> ...
+> ```
 
 Sonsuz döngüye giren bir programı terminalde **Ctrl + C** tuşlarıyla durdurabilirsiniz.
 
 **5. Sayaç yanlış başlatılırsa**
 
-```ruby
-i = 0
-```
+> **📄 main.rb**
+>
+> ```ruby
+> i = 0
+> ```
 
 Sayaç 0'dan başlarsa döngü `n` yerine `n + 1` kez çalışmaktadır. İlk satırda hiç yıldız olmadığı için çıktının başına yalnızca boşluklardan oluşan fazladan bir satır eklenmektedir:
 
-```
-   
-  *
- **
-***
-```
+> **🖥️ Çıktı**
+>
+> ```
+>    
+>   *
+>  **
+> ***
+> ```
 
 **6. Koşulda `<=` yerine `<` yazılırsa**
 
-```ruby
-while i < n
-```
+> **📄 main.rb**
+>
+> ```ruby
+> while i < n
+> ```
 
 Döngü `i` değeri `n`'ye eşit olduğunda durmaktadır. Bu yüzden en alttaki, yıldızlarla dolu son satır yazılmamaktadır:
 
-```
-  *
- **
-```
+> **🖥️ Çıktı**
+>
+> ```
+>   *
+>  **
+> ```
 
 ---
 
@@ -331,202 +400,226 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
 
    **Örnek 1**
 
-   ```bash
-   echo "4" | ruby sola.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "4" | ruby sola.rb
+   > ```
 
-   Çıktı:
-
-   ```
-   *
-   **
-   ***
-   ****
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   > *
+   > **
+   > ***
+   > ****
+   > ```
 
    **Örnek 2**
 
-   ```bash
-   echo "6" | ruby sola.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "6" | ruby sola.rb
+   > ```
 
-   Çıktı:
-
-   ```
-   *
-   **
-   ***
-   ****
-   *****
-   ******
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   > *
+   > **
+   > ***
+   > ****
+   > *****
+   > ******
+   > ```
 
 2. **Sağa yaslı ters dik üçgen:** Sağa yaslı üçgenin baş aşağı hâli. En uzun satır en üsttedir. (İpucu: sayacı `n`'den başlatıp azaltınız.)
 
    **Örnek 1**
 
-   ```bash
-   echo "4" | ruby saga_ters.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "4" | ruby saga_ters.rb
+   > ```
 
-   Çıktı:
-
-   ```
-   ****
-    ***
-     **
-      *
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   > ****
+   >  ***
+   >   **
+   >    *
+   > ```
 
    **Örnek 2**
 
-   ```bash
-   echo "6" | ruby saga_ters.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "6" | ruby saga_ters.rb
+   > ```
 
-   Çıktı:
-
-   ```
-   ******
-    *****
-     ****
-      ***
-       **
-        *
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   > ******
+   >  *****
+   >   ****
+   >    ***
+   >     **
+   >      *
+   > ```
 
 3. **Sola yaslı ters dik üçgen:** Sola yaslı üçgenin baş aşağı hâli. Satır başında boşluk yoktur, en uzun satır en üsttedir.
 
    **Örnek 1**
 
-   ```bash
-   echo "4" | ruby sola_ters.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "4" | ruby sola_ters.rb
+   > ```
 
-   Çıktı:
-
-   ```
-   ****
-   ***
-   **
-   *
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   > ****
+   > ***
+   > **
+   > *
+   > ```
 
    **Örnek 2**
 
-   ```bash
-   echo "6" | ruby sola_ters.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "6" | ruby sola_ters.rb
+   > ```
 
-   Çıktı:
-
-   ```
-   ******
-   *****
-   ****
-   ***
-   **
-   *
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   > ******
+   > *****
+   > ****
+   > ***
+   > **
+   > *
+   > ```
 
 4. **Piramit:** Yıldızlar ortalanmıştır. `i`. satırda kaç yıldız olduğunu tabloyla bulunuz. (İpucu: 1, 3, 5, 7 …)
 
    **Örnek 1**
 
-   ```bash
-   echo "4" | ruby piramit.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "4" | ruby piramit.rb
+   > ```
 
-   Çıktı:
-
-   ```
-      *
-     ***
-    *****
-   *******
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   >    *
+   >   ***
+   >  *****
+   > *******
+   > ```
 
    **Örnek 2**
 
-   ```bash
-   echo "6" | ruby piramit.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "6" | ruby piramit.rb
+   > ```
 
-   Çıktı:
-
-   ```
-        *
-       ***
-      *****
-     *******
-    *********
-   ***********
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   >      *
+   >     ***
+   >    *****
+   >   *******
+   >  *********
+   > ***********
+   > ```
 
 5. **Sayı üçgeni:** Yıldız yerine sayılar yazılmaktadır. Her satır, bir öncekinin sonuna yeni bir sayı eklenerek oluşmaktadır. (İpucu: döngüden önce boş bir yazı (`''`) tanımlayıp her adımda `i.to_s` ekleyiniz.)
 
    **Örnek 1**
 
-   ```bash
-   echo "4" | ruby sayi.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "4" | ruby sayi.rb
+   > ```
 
-   Çıktı:
-
-   ```
-   1
-   12
-   123
-   1234
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   > 1
+   > 12
+   > 123
+   > 1234
+   > ```
 
    **Örnek 2**
 
-   ```bash
-   echo "6" | ruby sayi.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "6" | ruby sayi.rb
+   > ```
 
-   Çıktı:
-
-   ```
-   1
-   12
-   123
-   1234
-   12345
-   123456
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   > 1
+   > 12
+   > 123
+   > 1234
+   > 12345
+   > 123456
+   > ```
 
 6. **İçi boş kare:** `n × n` boyutunda bir kare. İlk ve son satır dolu, aradaki satırlarda yalnızca kenarlarda yıldız vardır. (İpucu: döngünün içinde `if` ile ilk ve son satırı ayırınız.) Bu şekilde `n`'nin 4 ile 50 arasında olduğunu varsayınız.
 
    **Örnek 1**
 
-   ```bash
-   echo "4" | ruby kare.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "4" | ruby kare.rb
+   > ```
 
-   Çıktı:
-
-   ```
-   ****
-   *  *
-   *  *
-   ****
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   > ****
+   > *  *
+   > *  *
+   > ****
+   > ```
 
    **Örnek 2**
 
-   ```bash
-   echo "6" | ruby kare.rb
-   ```
+   > **⌨️ Terminal**
+   >
+   > ```bash
+   > echo "6" | ruby kare.rb
+   > ```
 
-   Çıktı:
-
-   ```
-   ******
-   *    *
-   *    *
-   *    *
-   *    *
-   ******
-   ```
+   > **🖥️ Çıktı**
+   >
+   > ```
+   > ******
+   > *    *
+   > *    *
+   > *    *
+   > *    *
+   > ******
+   > ```
