@@ -10,3 +10,11 @@ Programlamaya Giriş I dersinin Ruby laboratuvar materyalleri.
 | --- | --- | --- |
 | [Hafta-5-Odev.md](Hafta-5-Odev.md) | Ruby'ye giriş | Terminalde klasör ve dosya oluşturma, kodu kaydedip çalıştırma, `puts`, metotlar ve değişkenler. |
 | [Hafta-5-Kabuk.md](Hafta-5-Kabuk.md) | Temel seviye dosya ve dizin kabuk komutları | Masaüstünde terminalden klasör ve dosya oluşturma, klasörler arasında gezinme (`cd`, `cd ..`), dosya ile klasörün farkı, WSL'de Windows sürücülerinin `/mnt` altında görünmesi. |
+
+### Hafta 6: Vize
+
+Vize sınavları yapıldı.
+
+### Hafta 7: Uygulama yok
+
+Vize sonrası hafta olduğu için laboratuvar uygulaması iptal edildi.
