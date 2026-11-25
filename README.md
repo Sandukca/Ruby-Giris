@@ -19,8 +19,8 @@ Vize sınavları yapıldı.
 
 Vize sonrası hafta olduğu için laboratuvar uygulaması iptal edildi.
 
-### Hafta 8: Ödev
+### Hafta 8: Çalışma ödevi
 
 | Dosya | Konu | Açıklama |
 | --- | --- | --- |
-| [Hafta-8-Odev.md](Hafta-8-Odev.md) | Sağa yaslı dik üçgen | Tek `while` döngüsü ve yazıyı sayıyla çarpma (`" " * n`) ile yıldızlardan dik üçgen çizme. Çözüm ve 6 "Kendiniz deneyiniz" şekli. |
+| [Hafta-8-Odev.md](Hafta-8-Odev.md) | Sağa yaslı dik üçgen | Tek `while` döngüsü ve yazıyı sayıyla çarpma (`" " * n`) ile yıldızlardan dik üçgen çizme. Teslim edilmez. Çözüm, sık yapılan hatalar ve 6 "Kendiniz deneyiniz" şekli. |

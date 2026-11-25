@@ -1,8 +1,12 @@
-# Ruby Ödevi: Hafta 8
+# Ruby Çalışma Ödevi: Hafta 8
 
 ## Sağa yaslı dik üçgen
 
 Kullanıcıdan bir tam sayı (`n`) alıp `*` karakterleriyle `n` satırlık, sağa yaslı bir dik üçgen çizen bir program yazınız. Programda **tek bir `while` döngüsü** kullanınız.
+
+Bu bir **çalışma ödevidir**, teslim edilmeyecektir. Konuyu pekiştirmek için kendiniz çalışınız. Çözüm sayfanın ilerisinde verilmiştir. Çözüme bakmadan önce programı kendiniz yazmaya çalışmanız tavsiye edilmektedir.
+
+Negatif değer girilme ihtimalini düşünmeyiniz. Programınızı 1 ile 50 arasındaki değerlerle deneyiniz.
 
 **İpucu:** Ruby'de bir yazıyı bir sayıyla çarparsanız yazı o kadar kez yan yana yazılmaktadır. Terminalde aşağıdaki kodu çalıştırıp deneyiniz:
 
@@ -219,9 +223,109 @@ end
 
 ---
 
+## Sık yapılan hatalar
+
+Aşağıdaki hatalı programlar `echo "3" | ruby main.rb` ile çalıştırılmıştır. Programınız beklenmedik bir çıktı veriyorsa önce bu listeyi kontrol ediniz.
+
+**1. `to_i` unutulursa**
+
+```ruby
+n = gets
+```
+
+`gets` girilen değeri yazı (String) olarak okumaktadır. `i <= n` karşılaştırmasında sayı ile yazı karşılaştırılamadığı için program hata vermektedir:
+
+```
+comparison of Integer with String failed (ArgumentError)
+```
+
+Doğrusu `n = gets.to_i` şeklindedir.
+
+**2. Parantez unutulursa**
+
+```ruby
+puts ' ' * n - i + '*' * i
+```
+
+Ruby önce `' ' * n` işlemini yapmakta ve bir yazı elde etmektedir. Ardından bu yazıdan `i` sayısını çıkarmaya çalışmaktadır. Yazıdan sayı çıkarılamadığı için program hata vermektedir:
+
+```
+undefined method `-' for "   ":String (NoMethodError)
+```
+
+Doğrusu `' ' * (n - i)` şeklindedir. Önce parantezin içi hesaplanmakta, sonra boşluk o kadar kez yazılmaktadır.
+
+**3. `+` yerine virgül kullanılırsa**
+
+```ruby
+puts ' ' * (n - i), '*' * i
+```
+
+`puts` virgülle ayrılmış her değeri ayrı bir satıra yazmaktadır. Bu yüzden boşluklar ve yıldızlar alt alta düşmektedir:
+
+```
+  
+*
+ 
+**
+
+***
+```
+
+Doğrusu iki parçayı `+` ile birleştirmektir.
+
+**4. `i += 1` unutulursa**
+
+```ruby
+while i <= n
+  puts ' ' * (n - i) + '*' * i
+end
+```
+
+`i` hiç artmadığı için `i <= n` koşulu hep doğru kalmakta ve döngü sonsuza kadar çalışmaktadır. Ekran aynı satırla dolmaktadır:
+
+```
+  *
+  *
+  *
+...
+```
+
+Sonsuz döngüye giren bir programı terminalde **Ctrl + C** tuşlarıyla durdurabilirsiniz.
+
+**5. Sayaç yanlış başlatılırsa**
+
+```ruby
+i = 0
+```
+
+Sayaç 0'dan başlarsa döngü `n` yerine `n + 1` kez çalışmaktadır. İlk satırda hiç yıldız olmadığı için çıktının başına yalnızca boşluklardan oluşan fazladan bir satır eklenmektedir:
+
+```
+   
+  *
+ **
+***
+```
+
+**6. Koşulda `<=` yerine `<` yazılırsa**
+
+```ruby
+while i < n
+```
+
+Döngü `i` değeri `n`'ye eşit olduğunda durmaktadır. Bu yüzden en alttaki, yıldızlarla dolu son satır yazılmamaktadır:
+
+```
+  *
+ **
+```
+
+---
+
 ## Kendiniz deneyiniz
 
-Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıcıdan `n` alınız ve tek bir `while` döngüsü kullanınız. Her şekil için `Hafta8` klasöründe ayrı bir dosya oluşturunuz (örneğin `touch sola.rb`) ve programınızı verilen komutla çalıştırınız.
+Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıcıdan `n` alınız ve tek bir `while` döngüsü kullanınız. Her şekil için `Hafta8` klasöründe ayrı bir dosya oluşturunuz (örneğin `touch sola.rb`) ve programınızı verilen komutla çalıştırınız. Programlarınızı yine 1 ile 50 arasındaki değerlerle deneyiniz.
 
 1. **Sola yaslı dik üçgen:** Yıldızlar sola dayalıdır, satır başında boşluk yoktur.
 
@@ -298,7 +402,7 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
    1234
    ```
 
-6. **İçi boş kare:** `n × n` boyutunda bir kare. İlk ve son satır dolu, aradaki satırlarda yalnızca kenarlarda yıldız vardır. (İpucu: döngünün içinde `if` ile ilk ve son satırı ayırınız.)
+6. **İçi boş kare:** `n × n` boyutunda bir kare. İlk ve son satır dolu, aradaki satırlarda yalnızca kenarlarda yıldız vardır. (İpucu: döngünün içinde `if` ile ilk ve son satırı ayırınız.) Bu şekilde `n`'nin 4 ile 50 arasında olduğunu varsayınız.
 
    ```bash
    echo "4" | ruby kare.rb
