@@ -9,11 +9,11 @@ Bu ödevde terminalde bir klasör oluşturacak, içine dört Ruby dosyası yazac
 Terminali açınız ve aşağıdaki komutları sırayla yazınız. Okul bilgisayarında değilseniz ilk satırda `cd` ile kendi seçtiğiniz bir klasöre gidiniz.
 
 ```bash
-cd /mnt/c/Users/Vagrant/Desktop   # okul bilgisayarında masaüstüne gider
-mkdir Hafta5                      # Hafta5 adında bir klasör oluşturur
-cd Hafta5                         # Hafta5 klasörüne girer
-touch main.rb                     # boş bir main.rb dosyası oluşturur
-code main.rb                      # main.rb dosyasını VS Code editöründe açar
+cd /mnt/c/Users/Vagrant/Desktop   # okul bilgisayarında masaüstüne gitmektedir
+mkdir Hafta5                      # Hafta5 adında bir klasör oluşturmaktadır
+cd Hafta5                         # Hafta5 klasörüne girmektedir
+touch main.rb                     # boş bir main.rb dosyası oluşturmaktadır
+code main.rb                      # main.rb dosyasını VS Code editöründe açmaktadır
 ```
 
 ## 2. Kodu kaydetme ve çalıştırma
@@ -25,22 +25,28 @@ Her dosya için aynı adımları izleyiniz:
 3. Terminalde `ruby` komutuyla çalıştırınız:
 
 ```bash
-ruby main.rb   # main.rb dosyasını çalıştırır
+ruby main.rb   # main.rb dosyasını çalıştırmaktadır
 ```
 
-Kaydetmeyi unutursanız Ruby dosyanın eski halini çalıştırır.
+Kaydetmeyi unutursanız Ruby dosyanın eski hâlini çalıştırmaktadır.
 
 ---
 
 ## 3. main.rb: Merhaba
 
-`puts` komutu kendisine verilen yazıyı ekrana yazar.
+`puts` komutu kendisine verilen yazıyı ekrana yazmaktadır.
 
 ```ruby
 puts "Merhaba"
 ```
 
-**Ekrana yazılan:**
+Çalıştırma:
+
+```bash
+ruby main.rb
+```
+
+Çıktı:
 
 ```
 Merhaba
@@ -51,11 +57,11 @@ Merhaba
 Yeni dosyayı oluşturup açınız:
 
 ```bash
-touch main2.rb   # boş bir main2.rb dosyası oluşturur
-code main2.rb    # main2.rb dosyasını VS Code editöründe açar
+touch main2.rb   # boş bir main2.rb dosyası oluşturmaktadır
+code main2.rb    # main2.rb dosyasını VS Code editöründe açmaktadır
 ```
 
-Metot, bir isim verilmiş kod parçasıdır. `def` ile başlar, `end` ile biter. Metot tanımlandığında çalışmaz, adı yazılınca çalışır.
+Metot, bir isim verilmiş kod parçasıdır. `def` ile başlamakta, `end` ile bitmektedir. Metot tanımlandığında çalışmamakta, adı yazılınca çalışmaktadır.
 
 ```ruby
 def merhaba
@@ -65,7 +71,13 @@ end
 merhaba
 ```
 
-**Ekrana yazılan:**
+Çalıştırma:
+
+```bash
+ruby main2.rb
+```
+
+Çıktı:
 
 ```
 Merhaba
@@ -74,11 +86,11 @@ Merhaba
 ## 5. main3.rb: Metot ile verilen mesajı yazma
 
 ```bash
-touch main3.rb   # boş bir main3.rb dosyası oluşturur
-code main3.rb    # main3.rb dosyasını VS Code editöründe açar
+touch main3.rb   # boş bir main3.rb dosyası oluşturmaktadır
+code main3.rb    # main3.rb dosyasını VS Code editöründe açmaktadır
 ```
 
-Metoda parantez içinde bir değer verilebilir. Burada `mesaj`, metoda verilen yazıyı tutar. Böylece aynı metot farklı yazılarla kullanılabilir.
+Metoda parantez içinde bir değer verilebilir. Burada `mesaj`, metoda verilen yazıyı tutmaktadır. Böylece aynı metot farklı yazılarla kullanılabilir.
 
 ```ruby
 def yaz(mesaj)
@@ -89,7 +101,13 @@ yaz("Merhaba")
 yaz("Ruby öğreniyorum")
 ```
 
-**Ekrana yazılan:**
+Çalıştırma:
+
+```bash
+ruby main3.rb
+```
+
+Çıktı:
 
 ```
 Merhaba
@@ -99,11 +117,11 @@ Ruby öğreniyorum
 ## 6. main4.rb: Değişkenler
 
 ```bash
-touch main4.rb   # boş bir main4.rb dosyası oluşturur
-code main4.rb    # main4.rb dosyasını VS Code editöründe açar
+touch main4.rb   # boş bir main4.rb dosyası oluşturmaktadır
+code main4.rb    # main4.rb dosyasını VS Code editöründe açmaktadır
 ```
 
-Değişken, bir değere verilen addır. `=` işaretiyle değer atanır. Yazının içinde bir değişkenin değerini göstermek için `#{ }` kullanılır.
+Değişken, bir değere verilen addır. `=` işaretiyle değer atanmaktadır. Yazının içinde bir değişkenin değerini göstermek için `#{ }` kullanılmaktadır.
 
 ```ruby
 ad = "Deniz"        # yazı
@@ -122,7 +140,13 @@ yas = yas + 1       # değişkenin değeri değiştirilebilir
 puts "Gelecek yıl #{yas} yaşında olacağım."
 ```
 
-**Ekrana yazılan:**
+Çalıştırma:
+
+```bash
+ruby main4.rb
+```
+
+Çıktı:
 
 ```
 Deniz
