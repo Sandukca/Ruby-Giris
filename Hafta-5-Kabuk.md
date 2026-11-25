@@ -4,6 +4,8 @@ Bu çalışmada masaüstünüzde terminalden klasör ve dosya oluşturacak, klas
 
 Komutların yanındaki `#` işaretinden sonraki kısım açıklamadır, terminal onu çalıştırmamaktadır. Komutları yazarken açıklamayı yazmanıza gerek yoktur.
 
+**Bu sayfadaki kutular:** ⌨️ **Terminal** başlıklı kutulardaki komutları terminale yazıp Enter'a basınız. 🖥️ **Çıktı** başlıklı kutular ise ekranda görünecek sonucu göstermektedir, bunları terminale yazmayınız.
+
 **Kullanılan komutlar**
 
 | Komut | Görevi |
@@ -21,18 +23,22 @@ Komutların yanındaki `#` işaretinden sonraki kısım açıklamadır, terminal
 
 Terminal açıldığında genellikle Linux tarafındaki ev klasörünüzde (`/home/kullanici_adi`) başlamaktadır. Bu klasör Windows masaüstünüz değildir. Önce nerede olduğunuza bakınız, sonra masaüstüne gidiniz:
 
-```bash
-pwd                                   # şu anki klasörü yazmaktadır, örneğin /home/ogrenci
-cd /mnt/c/Users/vagrant/Desktop       # okul bilgisayarında masaüstüne gitmektedir
-pwd                                   # artık /mnt/c/Users/vagrant/Desktop yazmalı
-ls                                    # masaüstündeki klasör ve dosyaları listelemektedir
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> pwd                                   # şu anki klasörü yazmaktadır, örneğin /home/ogrenci
+> cd /mnt/c/Users/vagrant/Desktop       # okul bilgisayarında masaüstüne gitmektedir
+> pwd                                   # artık /mnt/c/Users/vagrant/Desktop yazmalı
+> ls                                    # masaüstündeki klasör ve dosyaları listelemektedir
+> ```
 
 Kendi bilgisayarınızda `vagrant` yerine Windows kullanıcı adınızı yazınız. Kullanıcı adınızı bilmiyorsanız şu komutla görebilirsiniz:
 
-```bash
-ls /mnt/c/Users                       # Windows'taki kullanıcı klasörlerini listelemektedir
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> ls /mnt/c/Users                       # Windows'taki kullanıcı klasörlerini listelemektedir
+> ```
 
 **İpucu:** Yolun bir kısmını yazıp **Tab** tuşuna basarsanız terminal adı kendisi tamamlamaktadır. Böylece yazım hatası yapma ihtimaliniz azalmaktadır.
 
@@ -42,16 +48,20 @@ ls /mnt/c/Users                       # Windows'taki kullanıcı klasörlerini l
 
 `mkdir` komutuna birden fazla ad verirseniz hepsini tek seferde oluşturmaktadır. Adları aralarında boşluk bırakarak yazınız:
 
-```bash
-mkdir klasor1 klasor2 klasor3         # üç klasörü birlikte oluşturmaktadır
-ls                                    # klasor1  klasor2  klasor3 görünmeli
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> mkdir klasor1 klasor2 klasor3         # üç klasörü birlikte oluşturmaktadır
+> ls                                    # klasor1  klasor2  klasor3 görünmeli
+> ```
 
 Aynı işi daha kısa yazmanın bir yolu da vardır. `{1..3}` ifadesi kabuk tarafından `1 2 3` olarak açılmaktadır:
 
-```bash
-mkdir klasor{1..3}                    # mkdir klasor1 klasor2 klasor3 ile aynıdır
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> mkdir klasor{1..3}                    # mkdir klasor1 klasor2 klasor3 ile aynıdır
+> ```
 
 Klasörler zaten varsa bu ikinci komut `File exists` hatası vermektedir. Bu bir sorun değildir, klasörlerin oluşturulmuş olduğunu göstermektedir.
 
@@ -61,10 +71,12 @@ Klasörler zaten varsa bu ikinci komut `File exists` hatası vermektedir. Bu bir
 
 `touch` komutu da birden fazla ad alabilir:
 
-```bash
-touch dosya1.txt dosya2.txt dosya3.txt   # üç boş dosyayı birlikte oluşturmaktadır
-ls                                       # klasörler ve dosyalar birlikte görünmeli
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> touch dosya1.txt dosya2.txt dosya3.txt   # üç boş dosyayı birlikte oluşturmaktadır
+> ls                                       # klasörler ve dosyalar birlikte görünmeli
+> ```
 
 ## 4. Dosya ile klasörün farkı
 
@@ -76,25 +88,31 @@ Masaüstünüze fareyle bakınız (açık pencereleri küçültünüz ya da **Wi
 
 Aynı farkı terminalde de görebilirsiniz:
 
-```bash
-ls -F                                 # klasörlerin sonuna / koymaktadır: dosya1.txt  klasor1/
-ls -l                                 # satırın ilk harfi d ise klasör, - ise dosyadır
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> ls -F                                 # klasörlerin sonuna / koymaktadır: dosya1.txt  klasor1/
+> ls -l                                 # satırın ilk harfi d ise klasör, - ise dosyadır
+> ```
 
 `ls -l` çıktısının bir bölümü şöyle görünmektedir:
 
-```
--rwxrwxrwx 1 ogrenci ogrenci    0 Nov 10 10:00 dosya1.txt
-drwxrwxrwx 1 ogrenci ogrenci 4096 Nov 10 10:00 klasor1
-```
+> **🖥️ Çıktı**
+>
+> ```
+> -rwxrwxrwx 1 ogrenci ogrenci    0 Nov 10 10:00 dosya1.txt
+> drwxrwxrwx 1 ogrenci ogrenci 4096 Nov 10 10:00 klasor1
+> ```
 
 Ortadaki sayı boyuttur. Yeni oluşturduğunuz dosyalar boş olduğu için boyutları `0`'dır.
 
 Masaüstü klasörünü terminalden doğrudan Windows Gezgini'nde de açabilirsiniz:
 
-```bash
-explorer.exe .                        # bulunduğunuz klasörü Windows Gezgini'nde açmaktadır
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> explorer.exe .                        # bulunduğunuz klasörü Windows Gezgini'nde açmaktadır
+> ```
 
 Buradaki `.` işareti "bulunduğum klasör" demektir.
 
@@ -102,28 +120,32 @@ Buradaki `.` işareti "bulunduğum klasör" demektir.
 
 Her klasöre sırayla giriniz, içinde bir dosya oluşturunuz ve `cd ..` ile masaüstüne geri dönünüz. Her adımda `pwd` ile nerede olduğunuzu kontrol ediniz:
 
-```bash
-cd klasor1                            # klasor1'e girmektedir
-pwd                                   # .../Desktop/klasor1 yazmalı
-touch not1.txt                        # klasor1'in içinde not1.txt oluşturmaktadır
-ls                                    # not1.txt görünmeli
-cd ..                                 # bir üst klasöre, yani masaüstüne dönmektedir
-pwd                                   # .../Desktop yazmalı
-
-cd klasor2
-touch not2.txt
-cd ..
-
-cd klasor3
-touch not3.txt
-cd ..
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> cd klasor1                            # klasor1'e girmektedir
+> pwd                                   # .../Desktop/klasor1 yazmalı
+> touch not1.txt                        # klasor1'in içinde not1.txt oluşturmaktadır
+> ls                                    # not1.txt görünmeli
+> cd ..                                 # bir üst klasöre, yani masaüstüne dönmektedir
+> pwd                                   # .../Desktop yazmalı
+>
+> cd klasor2
+> touch not2.txt
+> cd ..
+>
+> cd klasor3
+> touch not3.txt
+> cd ..
+> ```
 
 Hepsini bitirdikten sonra masaüstünden her klasörün içine bakınız:
 
-```bash
-ls klasor1 klasor2 klasor3            # her klasörün içindekileri ayrı ayrı listelemektedir
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> ls klasor1 klasor2 klasor3            # her klasörün içindekileri ayrı ayrı listelemektedir
+> ```
 
 Fareyle de klasörleri çift tıklayıp açınız. Her klasörün içinde bir dosya görmelisiniz.
 
@@ -137,9 +159,11 @@ Okul bilgisayarlarında Windows'un içinde bir Linux (Ubuntu) çalışmaktadır.
 
 Windows'ta her diskin ve sürücünün kendi harfi vardır: `C:` sistem diski, `D:` ikinci disk ya da USB bellek gibi. Her yol bir sürücü harfiyle başlamakta ve klasörler ters bölü `\` ile ayrılmaktadır:
 
-```
-C:\Users\vagrant\Desktop
-```
+> **🪟 Windows'taki yazılışı**
+>
+> ```
+> C:\Users\vagrant\Desktop
+> ```
 
 Yani Windows'ta tek bir başlangıç noktası yoktur, her sürücü ayrı bir ağacın köküdür.
 
@@ -159,20 +183,24 @@ Bu yüzden 1. adımda masaüstüne `cd /mnt/c/Users/vagrant/Desktop` ile gittini
 
 Terminalde kendiniz görünüz:
 
-```bash
-ls /                                  # Linux ağacının kökü: bin, etc, home, mnt, usr ...
-ls /mnt                               # Windows sürücüleri: c (varsa d, e ...)
-ls /mnt/c                             # C: sürücüsünün içi: Users, Windows, Program Files ...
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> ls /                                  # Linux ağacının kökü: bin, etc, home, mnt, usr ...
+> ls /mnt                               # Windows sürücüleri: c (varsa d, e ...)
+> ls /mnt/c                             # C: sürücüsünün içi: Users, Windows, Program Files ...
+> ```
 
 Son komutun çıktısını Windows Gezgini'nde açtığınız `C:` sürücüsüyle karşılaştırınız. Aynı klasörleri görmelisiniz.
 
 İki yazım arasında çevirmek için `wslpath` komutu kullanılmaktadır:
 
-```bash
-wslpath -w /mnt/c/Users               # Linux yolunu Windows yazımına çevirmektedir: C:\Users
-wslpath 'C:\Users'                    # Windows yolunu Linux yazımına çevirmektedir: /mnt/c/Users
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> wslpath -w /mnt/c/Users               # Linux yolunu Windows yazımına çevirmektedir: C:\Users
+> wslpath 'C:\Users'                    # Windows yolunu Linux yazımına çevirmektedir: /mnt/c/Users
+> ```
 
 Windows yolunu yazarken tek tırnak `' '` kullanınız. Tırnak olmadan kabuk ters bölüleri silmektedir.
 
@@ -180,10 +208,12 @@ Windows yolunu yazarken tek tırnak `' '` kullanınız. Tırnak olmadan kabuk te
 
 `/mnt` altındaki klasörler Windows'un diskidir. Linux'un kendi dosyaları ise ayrı bir sanal diskte durmaktadır. Terminali açtığınızda başladığınız ev klasörü buradadır:
 
-```bash
-cd ~                                  # ~ işareti ev klasörünüz demektir
-pwd                                   # /home/kullanici_adi yazmaktadır
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> cd ~                                  # ~ işareti ev klasörünüz demektir
+> pwd                                   # /home/kullanici_adi yazmaktadır
+> ```
 
 Bu klasör Windows masaüstünde ya da `C:` sürücüsünde görünmemektedir. Windows Gezgini'nden ulaşmak isterseniz adres çubuğuna `\\wsl$` yazınız ya da ev klasöründeyken terminalde `explorer.exe .` komutunu çalıştırınız.
 
@@ -199,9 +229,11 @@ Bu klasör Windows masaüstünde ya da `C:` sürücüsünde görünmemektedir. W
 
 Bu çalışmada oluşturduklarınızı silmek isterseniz masaüstündeyken şu komutları çalıştırınız:
 
-```bash
-rm dosya1.txt dosya2.txt dosya3.txt   # üç dosyayı silmektedir
-rm -r klasor1 klasor2 klasor3         # üç klasörü içindekilerle birlikte silmektedir
-```
+> **⌨️ Terminal**
+>
+> ```bash
+> rm dosya1.txt dosya2.txt dosya3.txt   # üç dosyayı silmektedir
+> rm -r klasor1 klasor2 klasor3         # üç klasörü içindekilerle birlikte silmektedir
+> ```
 
 **Dikkat:** Terminalden silinen dosyalar Geri Dönüşüm Kutusu'na gitmemekte, doğrudan silinmektedir. `rm` komutunu çalıştırmadan önce adları kontrol ediniz.
