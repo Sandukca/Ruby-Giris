@@ -23,12 +23,12 @@ Terminal açıldığında genellikle Linux tarafındaki ev klasörünüzde (`/ho
 
 ```bash
 pwd                                   # şu anki klasörü yazmaktadır, örneğin /home/ogrenci
-cd /mnt/c/Users/Vagrant/Desktop       # okul bilgisayarında masaüstüne gitmektedir
-pwd                                   # artık /mnt/c/Users/Vagrant/Desktop yazmalı
+cd /mnt/c/Users/vagrant/Desktop       # okul bilgisayarında masaüstüne gitmektedir
+pwd                                   # artık /mnt/c/Users/vagrant/Desktop yazmalı
 ls                                    # masaüstündeki klasör ve dosyaları listelemektedir
 ```
 
-Kendi bilgisayarınızda `Vagrant` yerine Windows kullanıcı adınızı yazınız. Kullanıcı adınızı bilmiyorsanız şu komutla görebilirsiniz:
+Kendi bilgisayarınızda `vagrant` yerine Windows kullanıcı adınızı yazınız. Kullanıcı adınızı bilmiyorsanız şu komutla görebilirsiniz:
 
 ```bash
 ls /mnt/c/Users                       # Windows'taki kullanıcı klasörlerini listelemektedir
@@ -127,7 +127,7 @@ ls klasor1 klasor2 klasor3            # her klasörün içindekileri ayrı ayrı
 
 Fareyle de klasörleri çift tıklayıp açınız. Her klasörün içinde bir dosya görmelisiniz.
 
-**Yol mantığı:** `..` her zaman "bir üst klasör", `.` her zaman "bulunduğum klasör" demektir. `cd ..` komutunu masaüstündeyken çalıştırırsanız `/mnt/c/Users/Vagrant` klasörüne çıkılmaktadır. Masaüstüne dönmek için `cd Desktop` yazınız.
+**Yol mantığı:** `..` her zaman "bir üst klasör", `.` her zaman "bulunduğum klasör" demektir. `cd ..` komutunu masaüstündeyken çalıştırırsanız `/mnt/c/Users/vagrant` klasörüne çıkılmaktadır. Masaüstüne dönmek için `cd Desktop` yazınız.
 
 ## 6. WSL'de Windows sürücüleri nerede durmaktadır?
 
@@ -138,7 +138,7 @@ Okul bilgisayarlarında Windows'un içinde bir Linux (Ubuntu) çalışmaktadır.
 Windows'ta her diskin ve sürücünün kendi harfi vardır: `C:` sistem diski, `D:` ikinci disk ya da USB bellek gibi. Her yol bir sürücü harfiyle başlamakta ve klasörler ters bölü `\` ile ayrılmaktadır:
 
 ```
-C:\Users\Vagrant\Desktop
+C:\Users\vagrant\Desktop
 ```
 
 Yani Windows'ta tek bir başlangıç noktası yoktur, her sürücü ayrı bir ağacın köküdür.
@@ -153,9 +153,9 @@ WSL, Windows'un sürücülerini `/mnt` klasörünün altına bağlamaktadır. S�
 | --- | --- |
 | `C:\` | `/mnt/c` |
 | `D:\` | `/mnt/d` |
-| `C:\Users\Vagrant\Desktop` | `/mnt/c/Users/Vagrant/Desktop` |
+| `C:\Users\vagrant\Desktop` | `/mnt/c/Users/vagrant/Desktop` |
 
-Bu yüzden 1. adımda masaüstüne `cd /mnt/c/Users/Vagrant/Desktop` ile gittiniz. İkisi de aynı klasördür, yalnızca yazılışları farklıdır.
+Bu yüzden 1. adımda masaüstüne `cd /mnt/c/Users/vagrant/Desktop` ile gittiniz. İkisi de aynı klasördür, yalnızca yazılışları farklıdır.
 
 Terminalde kendiniz görünüz:
 

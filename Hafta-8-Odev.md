@@ -22,7 +22,7 @@ puts " " * 3 + "*" # üç boşluk, sonra bir yıldız
 Hafta 5'teki gibi masaüstünde bir klasör açıp içinde `main.rb` dosyasını oluşturunuz:
 
 ```bash
-cd /mnt/c/Users/Vagrant/Desktop   # okul bilgisayarında masaüstüne gitmektedir
+cd /mnt/c/Users/vagrant/Desktop   # okul bilgisayarında masaüstüne gitmektedir
 mkdir Hafta8                      # Hafta8 adında bir klasör oluşturmaktadır
 cd Hafta8                         # Hafta8 klasörüne girmektedir
 touch main.rb                     # boş bir main.rb dosyası oluşturmaktadır

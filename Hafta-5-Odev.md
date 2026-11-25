@@ -9,7 +9,7 @@ Bu ödevde terminalde bir klasör oluşturacak, içine dört Ruby dosyası yazac
 Terminali açınız ve aşağıdaki komutları sırayla yazınız. Okul bilgisayarında değilseniz ilk satırda `cd` ile kendi seçtiğiniz bir klasöre gidiniz.
 
 ```bash
-cd /mnt/c/Users/Vagrant/Desktop   # okul bilgisayarında masaüstüne gitmektedir
+cd /mnt/c/Users/vagrant/Desktop   # okul bilgisayarında masaüstüne gitmektedir
 mkdir Hafta5                      # Hafta5 adında bir klasör oluşturmaktadır
 cd Hafta5                         # Hafta5 klasörüne girmektedir
 touch main.rb                     # boş bir main.rb dosyası oluşturmaktadır
