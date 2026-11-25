@@ -34,6 +34,80 @@ echo "4" | ruby main.rb # 4 sayısı programa doğrudan verilir
 
 ---
 
+## Uyarı: Girdiyi `echo` ve `|` ile verme
+
+Programınızdaki `gets`, **standart girişten** bir satır okur. Standart giriş normalde klavyedir. Bu yüzden `ruby main.rb` yazdığınızda program durur ve sizin bir sayı yazıp Enter'a basmanızı bekler.
+
+Aynı girdiyi her seferinde elle yazmak yerine komutla da verebilirsiniz:
+
+- `echo` kendisine verilen yazıyı ekrana yazar ve sonuna bir satır sonu (Enter) ekler.
+- `|` işaretine **pipe** (boru) denir. Solundaki komutun ekrana yazacağı şeyi ekrana yazdırmaz, sağındaki programın standart girişine verir.
+
+Yani `echo "4" | ruby main.rb` komutunda `echo`'nun yazdığı `4` ve Enter, `main.rb`'ye klavyeden yazılmış gibi gelir. `gets` bu satırı okur.
+
+**1. `echo` tek başına**
+
+```bash
+echo "Merhaba"
+```
+
+Çıktı:
+
+```
+Merhaba
+```
+
+**2. `gets` ile okuyan bir program**
+
+`selam.rb` dosyasına aşağıdaki kodu yazınız:
+
+```ruby
+ad = gets.chomp
+puts "Merhaba #{ad}"
+```
+
+Önce elle çalıştırınız: `ruby selam.rb` yazınız, program beklerken `Deniz` yazıp Enter'a basınız. Sonra aynı girdiyi `echo` ile veriniz:
+
+```bash
+echo "Deniz" | ruby selam.rb
+```
+
+Çıktı:
+
+```
+Merhaba Deniz
+```
+
+İki yolun sonucu aynıdır. Farkı şudur: `echo` ile verdiğinizde program sizi beklemez ve girdi (`Deniz`) ekranda ayrıca görünmez, yalnızca programın çıktısı görünür.
+
+**3. Birden fazla girdi**
+
+Her `gets` bir satır okur. Program iki kez `gets` çağırıyorsa iki satır vermeniz gerekir. `toplam.rb`:
+
+```ruby
+a = gets.to_i
+b = gets.to_i
+puts a + b
+```
+
+`printf` ile `\n` (satır sonu) koyarak iki satırı tek komutta verebilirsiniz:
+
+```bash
+printf "3\n5\n" | ruby toplam.rb
+```
+
+Çıktı:
+
+```
+8
+```
+
+**Dikkat:** `echo "3 5" | ruby toplam.rb` yazarsanız iki sayı tek satırda gider. İlk `gets` `3 5` satırının tamamını okur, `to_i` bundan `3` çıkarır. İkinci `gets` okuyacak satır bulamaz, `b` da `0` olur. Ekranda `8` yerine `3` görürsünüz.
+
+Bu ödevde program tek bir sayı okuduğu için `echo "4" | ruby main.rb` yeterlidir.
+
+---
+
 ## Örnekler
 
 **Örnek 1**
