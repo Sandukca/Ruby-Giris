@@ -123,9 +123,15 @@ end
 
 ## Kendiniz deneyiniz
 
-Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıcıdan `n` alınız ve tek bir `while` döngüsü kullanınız. Örnek çıktılar `n = 4` içindir.
+Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıcıdan `n` alınız ve tek bir `while` döngüsü kullanınız. Her şekil için `Hafta8` klasöründe ayrı bir dosya oluşturunuz (örneğin `touch sola.rb`) ve programınızı verilen komutla çalıştırınız.
 
 1. **Sola yaslı dik üçgen:** Yıldızlar sola dayalıdır, satır başında boşluk yoktur.
+
+   ```bash
+   echo "4" | ruby sola.rb
+   ```
+
+   Çıktı:
 
    ```
    *
@@ -136,6 +142,12 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
 
 2. **Ters dik üçgen:** Sağa yaslı üçgenin baş aşağı hâli. En uzun satır en üsttedir. (İpucu: sayacı `n`'den başlatıp azaltınız.)
 
+   ```bash
+   echo "4" | ruby ters.rb
+   ```
+
+   Çıktı:
+
    ```
    ****
     ***
@@ -144,6 +156,12 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
    ```
 
 3. **Piramit:** Yıldızlar ortalanmıştır. `i`. satırda kaç yıldız olduğunu tabloyla bulunuz. (İpucu: 1, 3, 5, 7 …)
+
+   ```bash
+   echo "4" | ruby piramit.rb
+   ```
+
+   Çıktı:
 
    ```
       *
@@ -154,6 +172,12 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
 
 4. **Sayı üçgeni:** Yıldız yerine sayılar yazılır. Her satır bir öncekinin sonuna yeni bir sayı eklenerek oluşur. (İpucu: döngüden önce boş bir yazı (`''`) tanımlayıp her adımda `i.to_s` ekleyiniz.)
 
+   ```bash
+   echo "4" | ruby sayi.rb
+   ```
+
+   Çıktı:
+
    ```
    1
    12
@@ -162,6 +186,12 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
    ```
 
 5. **İçi boş kare:** `n × n` boyutunda bir kare. İlk ve son satır dolu, aradaki satırlarda yalnızca kenarlarda yıldız vardır. (İpucu: döngünün içinde `if` ile ilk ve son satırı ayırınız.)
+
+   ```bash
+   echo "4" | ruby kare.rb
+   ```
+
+   Çıktı:
 
    ```
    ****
