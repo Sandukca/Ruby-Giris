@@ -4,7 +4,7 @@
 
 Kullanıcıdan bir tam sayı (`n`) alıp `*` karakterleriyle `n` satırlık, sağa yaslı bir dik üçgen çizen bir program yazınız. Programda **tek bir `while` döngüsü** kullanınız.
 
-**İpucu:** Ruby'de bir yazıyı bir sayıyla çarparsanız yazı o kadar kez yan yana yazılır. Terminalde aşağıdaki kodu çalıştırıp deneyiniz:
+**İpucu:** Ruby'de bir yazıyı bir sayıyla çarparsanız yazı o kadar kez yan yana yazılmaktadır. Terminalde aşağıdaki kodu çalıştırıp deneyiniz:
 
 ```ruby
 puts "q" * 4      # qqqq
@@ -18,32 +18,32 @@ puts " " * 3 + "*" # üç boşluk, sonra bir yıldız
 Hafta 5'teki gibi masaüstünde bir klasör açıp içinde `main.rb` dosyasını oluşturunuz:
 
 ```bash
-cd /mnt/c/Users/Vagrant/Desktop   # okul bilgisayarında masaüstüne gider
-mkdir Hafta8                      # Hafta8 adında bir klasör oluşturur
-cd Hafta8                         # Hafta8 klasörüne girer
-touch main.rb                     # boş bir main.rb dosyası oluşturur
-code main.rb                      # main.rb dosyasını VS Code editöründe açar
+cd /mnt/c/Users/Vagrant/Desktop   # okul bilgisayarında masaüstüne gitmektedir
+mkdir Hafta8                      # Hafta8 adında bir klasör oluşturmaktadır
+cd Hafta8                         # Hafta8 klasörüne girmektedir
+touch main.rb                     # boş bir main.rb dosyası oluşturmaktadır
+code main.rb                      # main.rb dosyasını VS Code editöründe açmaktadır
 ```
 
 Programınızı iki şekilde çalıştırabilirsiniz:
 
 ```bash
-ruby main.rb            # program sayıyı bekler, siz yazıp Enter'a basarsınız
-echo "4" | ruby main.rb # 4 sayısı programa doğrudan verilir
+ruby main.rb            # program, sayıyı yazıp Enter'a basmanızı beklemektedir
+echo "4" | ruby main.rb # 4 sayısı programa doğrudan verilmektedir
 ```
 
 ---
 
 ## Uyarı: Girdiyi `echo` ve `|` ile verme
 
-Programınızdaki `gets`, **standart girişten** bir satır okur. Standart giriş normalde klavyedir. Bu yüzden `ruby main.rb` yazdığınızda program durur ve sizin bir sayı yazıp Enter'a basmanızı bekler.
+Programınızdaki `gets`, **standart girişten** bir satır okumaktadır. Standart giriş normalde klavyedir. Bu yüzden `ruby main.rb` yazdığınızda program durmakta ve sizin bir sayı yazıp Enter'a basmanızı beklemektedir.
 
 Aynı girdiyi her seferinde elle yazmak yerine komutla da verebilirsiniz:
 
-- `echo` kendisine verilen yazıyı ekrana yazar ve sonuna bir satır sonu (Enter) ekler.
-- `|` işaretine **pipe** (boru) denir. Solundaki komutun ekrana yazacağı şeyi ekrana yazdırmaz, sağındaki programın standart girişine verir.
+- `echo` kendisine verilen yazıyı ekrana yazmakta ve sonuna bir satır sonu (Enter) eklemektedir.
+- `|` işaretine **pipe** (boru) denilmektedir. Pipe, solundaki komutun ekrana yazacağı şeyi ekrana yazdırmamakta, sağındaki programın standart girişine vermektedir.
 
-Yani `echo "4" | ruby main.rb` komutunda `echo`'nun yazdığı `4` ve Enter, `main.rb`'ye klavyeden yazılmış gibi gelir. `gets` bu satırı okur.
+Yani `echo "4" | ruby main.rb` komutunda `echo`'nun yazdığı `4` ve Enter, `main.rb`'ye klavyeden yazılmış gibi gelmektedir. `gets` bu satırı okumaktadır.
 
 **1. `echo` tek başına**
 
@@ -78,11 +78,11 @@ echo "Deniz" | ruby selam.rb
 Merhaba Deniz
 ```
 
-İki yolun sonucu aynıdır. Farkı şudur: `echo` ile verdiğinizde program sizi beklemez ve girdi (`Deniz`) ekranda ayrıca görünmez, yalnızca programın çıktısı görünür.
+İki yolun sonucu aynıdır. Farkı şudur: `echo` ile verdiğinizde program sizi beklememekte ve girdi (`Deniz`) ekranda ayrıca görünmemektedir. Ekranda yalnızca programın çıktısı görünmektedir.
 
 **3. Birden fazla girdi**
 
-Her `gets` bir satır okur. Program iki kez `gets` çağırıyorsa iki satır vermeniz gerekir. `toplam.rb`:
+Her `gets` bir satır okumaktadır. Program iki kez `gets` çağırıyorsa iki satır vermeniz gerekmektedir. `toplam.rb`:
 
 ```ruby
 a = gets.to_i
@@ -102,7 +102,7 @@ printf "3\n5\n" | ruby toplam.rb
 8
 ```
 
-**Dikkat:** `echo "3 5" | ruby toplam.rb` yazarsanız iki sayı tek satırda gider. İlk `gets` `3 5` satırının tamamını okur, `to_i` bundan `3` çıkarır. İkinci `gets` okuyacak satır bulamaz, `b` da `0` olur. Ekranda `8` yerine `3` görürsünüz.
+**Dikkat:** `echo "3 5" | ruby toplam.rb` yazarsanız iki sayı tek satırda gitmektedir. İlk `gets` `3 5` satırının tamamını okumakta, `to_i` bundan `3` çıkarmaktadır. İkinci `gets` okuyacak satır bulamamakta, `b` de `0` olmaktadır. Bu durumda ekranda `8` yerine `3` yazılmaktadır.
 
 Bu ödevde program tek bir sayı okuduğu için `echo "4" | ruby main.rb` yeterlidir.
 
@@ -191,7 +191,7 @@ Kodu yazmadan önce algoritmayı kâğıt üzerinde kurunuz:
 | 3 | 1 | 3 | ` ***` |
 | 4 | 0 | 4 | `****` |
 
-Tablodan şu kural çıkar: `i`. satırda **`n - i` boşluk** ve **`i` yıldız** vardır. Satır sayısı da `n`'dir.
+Tablodan şu kural çıkmaktadır: `i`. satırda **`n - i` boşluk** ve **`i` yıldız** vardır. Satır sayısı da `n`'dir.
 
 ---
 
@@ -210,12 +210,12 @@ end
 
 **Satır satır açıklama**
 
-1. `n = gets.to_i`: Kullanıcının yazdığı sayıyı okur ve tam sayıya çevirir.
-2. `i = 1`: Kaçıncı satırda olduğumuzu tutan sayaç 1'den başlar.
-3. `while i <= n`: Sayaç `n`'yi geçene kadar döngü çalışır, yani `n` satır yazılır.
-4. `' ' * (n - i)`: Satırın başına `n - i` tane boşluk koyar.
-5. `'*' * i`: Boşlukların arkasına `i` tane yıldız ekler. İki parça `+` ile birleştirilip `puts` ile yazılır.
-6. `i += 1`: Bir sonraki satıra geçer.
+1. `n = gets.to_i`: Kullanıcının yazdığı sayıyı okumakta ve tam sayıya çevirmektedir.
+2. `i = 1`: Kaçıncı satırda olduğumuzu tutan sayaç 1'den başlamaktadır.
+3. `while i <= n`: Sayaç `n`'yi geçene kadar döngü çalışmakta, yani `n` satır yazılmaktadır.
+4. `' ' * (n - i)`: Satırın başına `n - i` tane boşluk koymaktadır.
+5. `'*' * i`: Boşlukların arkasına `i` tane yıldız eklemektedir. İki parça `+` ile birleştirilip `puts` ile yazılmaktadır.
+6. `i += 1`: Bir sonraki satıra geçilmektedir.
 
 ---
 
@@ -283,7 +283,7 @@ Aşağıdaki şekilleri de birer programla çiziniz. Her birinde yine kullanıc�
    *******
    ```
 
-5. **Sayı üçgeni:** Yıldız yerine sayılar yazılır. Her satır bir öncekinin sonuna yeni bir sayı eklenerek oluşur. (İpucu: döngüden önce boş bir yazı (`''`) tanımlayıp her adımda `i.to_s` ekleyiniz.)
+5. **Sayı üçgeni:** Yıldız yerine sayılar yazılmaktadır. Her satır, bir öncekinin sonuna yeni bir sayı eklenerek oluşmaktadır. (İpucu: döngüden önce boş bir yazı (`''`) tanımlayıp her adımda `i.to_s` ekleyiniz.)
 
    ```bash
    echo "4" | ruby sayi.rb
