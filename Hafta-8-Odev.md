@@ -36,20 +36,38 @@ echo "4" | ruby main.rb # 4 sayısı programa doğrudan verilir
 
 ## Örnekler
 
-**Girdi:** `1`
+**Örnek 1**
+
+```bash
+echo "1" | ruby main.rb
+```
+
+Çıktı:
 
 ```
 *
 ```
 
-**Girdi:** `2`
+**Örnek 2**
+
+```bash
+echo "2" | ruby main.rb
+```
+
+Çıktı:
 
 ```
  *
 **
 ```
 
-**Girdi:** `4`
+**Örnek 3**
+
+```bash
+echo "4" | ruby main.rb
+```
+
+Çıktı:
 
 ```
    *
@@ -58,7 +76,13 @@ echo "4" | ruby main.rb # 4 sayısı programa doğrudan verilir
 ****
 ```
 
-**Girdi:** `10`
+**Örnek 4**
+
+```bash
+echo "10" | ruby main.rb
+```
+
+Çıktı:
 
 ```
          *
